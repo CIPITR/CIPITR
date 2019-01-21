@@ -43,7 +43,7 @@ For experiments on subset of CQA having 100 questions per type, download the pre
 For *e.g.* to train and test the tensorflow code on *simple* question type on 100-QA pair subset of CQA:
 1. `cd CSQA_TACL_FINAL/code/NPI/tensorflow/gold_WikiData_CSQA`
 2. `python train.py  parameters/parameters_simple_small.json small_Jan_7` *#this will create a folder model/simple_small_Jan_7 to dump the trained model*
-3. python load.py parameters/parameters_simple_small.json small_Jan_7` *#this will run the trained model on the test data, as mentioned in the parameter file*
+3. `python load.py parameters/parameters_simple_small.json small_Jan_7` *#this will run the trained model on the test data, as mentioned in the parameter file*
 
 * **Step 13:** To download pre-trained models and log files:
 1. Download model.zip from https://drive.google.com/file/d/1rRZcDhWaRnv3BtZuwC0rFl8yrgElgM47/view?usp=sharing and extract
