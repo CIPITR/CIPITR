@@ -2,6 +2,8 @@
 This repository contains the implementation of the program induction model proposed in **Complex Program Induction for Querying Knowledge Bases in the
 Absence of Gold Programs** and links to download associated datasets. 
 
+Currently this code only handles program induction where the input variables to the program are `gold` i.e. for example if KBQA requires entity, relation type linking on the query before program induction, this code sends the oracle entity, relation, type linker's output to CIPITR.
+
 # Datasets
 Datasets on Complex Question answering on Knowledge Bases, used for evaluating CIPITR
 1. Complex Sequential Question Answering (https://amritasaha1812.github.io/CSQA/) Dataset
@@ -28,7 +30,7 @@ For experiments on subset of CQA having 100 questions per type, download the pre
 * **Step 5:** For running any of the tensorflow scripts, go inside CSQA_TACL_FINAL/code/NPI/tensorflow and install the dependencies by running `$pip install -r requirements.txt`
 * **Step 6:** Similarly, for running any of the pytorch scripts,  go inside CSQA_TACL_FINAL/code/NPI/pytorch and install the dependencies by running `$pip install -r requirements.txt`
 
-## Experiments on the gold entity, relation, type linking data
+<!--## Experiments on the gold entity, relation, type linking data-->
 * **Step 7:** For running the experiments on CQA (or any subset of CQA) with the gold entity, relation, type linking, we recommend using the tensorflow version. 
 
 * **Step 8:** To do so go inside *CSQA_TACL_FINAL/code/NPI/tensorflow/gold_WikiData_CSQA* folder
