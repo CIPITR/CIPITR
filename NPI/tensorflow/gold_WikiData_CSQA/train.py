@@ -56,7 +56,7 @@ class TrainModel():
 
         if 'train_mode' not in self.param: # controls whether to just use reinforce or alternatively do an ML(supervised) pretraining prior to reinforce
             self.param['train_mode'] = 'reinforce'
-        self.qtype_wise_batching = self.param['questype_wise_batching'] # @todo : @amrita 1 line abt this
+        self.qtype_wise_batching = self.param['questype_wise_batching'] #this option allows uniform distribution of different query types in every training batch to avoid the model getting biased to any specific type
         self.read_data = ReadBatchData(param) # initializes the ReadBatchData object for preprocessing and reading the training/test data batch by batch
         print "initialized read data"
         # param['relaxed_reward_till_epoch'] controls whether or not to supply auxillary rewards for atleast predicting the correct answer type
