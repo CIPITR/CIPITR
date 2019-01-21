@@ -1,0 +1,11 @@
+out
+out/*
+err
+err/*
+model
+model/*
+ans_err
+ans_err/*
+ans_out
+ans_out/*
+*.pyc

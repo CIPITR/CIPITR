@@ -1,0 +1,7 @@
+gen_set1	entity,relation	set_ent
+gen_set2	entity,relation,relation	set_ent
+gen_set1_date	entity,relation_date	set_date
+gen_set2_date	entity,relation,relation_date	set_date
+set_oper_ints	set_ent,set_ent	set_ent
+gen_set2_dateconstrained	entity,relation,relation,relation_date,date	set_ent
+gen_set2_date_dateconstrained	entity,relation,relation_date,relation_date,date	set_date	
