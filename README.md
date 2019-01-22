@@ -1,5 +1,5 @@
 # Complex Imperative Program Induction From Terminal Rewards (CIPITR)
-This repository contains the implementation of the program induction model proposed in **Complex Program Induction for Querying Knowledge Bases in the
+This repository contains the implementation of the program induction model proposed in the TACL paper **Complex Program Induction for Querying Knowledge Bases in the
 Absence of Gold Programs** and links to download associated datasets. 
 
 Currently this code only handles program induction where the input variables to the program are `gold` i.e. for example if KBQA requires entity, relation type linking on the query before program induction, this code sends the oracle entity, relation, type linker's output to CIPITR.
