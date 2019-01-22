@@ -43,15 +43,15 @@ For experiments on subset of CQA having 100 questions per type, download the pre
 * **Step 12:** To load the trained model and run test, run `python load.py <parameter_file> <time-stamp>` (use the same ID as used during training)
 
 For *e.g.* to train and test the tensorflow code on *simple* question type on 100-QA pair subset of CQA:
-1. `cd CSQA_TACL_FINAL/code/NPI/tensorflow/gold_WikiData_CSQA`
-2. `python train.py  parameters/parameters_simple_small.json small_Jan_7` *#this will create a folder model/simple_small_Jan_7 to dump the trained model*
-3. `python load.py parameters/parameters_simple_small.json small_Jan_7` *#this will run the trained model on the test data, as mentioned in the parameter file*
+	1. `cd CSQA_TACL_FINAL/code/NPI/tensorflow/gold_WikiData_CSQA`
+	2. `python train.py  parameters/parameters_simple_small.json small_Jan_7` *#this will create a folder model/simple_small_Jan_7 to dump the trained model*
+	3. `python load.py parameters/parameters_simple_small.json small_Jan_7` *#this will run the trained model on the test data, as mentioned in the parameter file*
 
 * **Step 13:** To download pre-trained models and log files:
-1. Download model.zip from https://drive.google.com/file/d/1rRZcDhWaRnv3BtZuwC0rFl8yrgElgM47/view?usp=sharing and extract
-2. model/gold_WikiData_CSQA contains model.zip and out.zip
-3. model.zip contains all the models trained on the 7 query types
-4. out.zip contains all the log files of the training on the 7 query types
+	1. Download model.zip from https://drive.google.com/file/d/1rRZcDhWaRnv3BtZuwC0rFl8yrgElgM47/view?usp=sharing and extract
+	2. model/gold_WikiData_CSQA contains model.zip and out.zip
+	3. model.zip contains all the models trained on the 7 query types
+	4. out.zip contains all the log files of the training on the 7 query types
 
 
 <!-- 
@@ -96,13 +96,13 @@ For *e.g.* to train and test the tensorflow code on *simple* question type on 10
 * **Step 8:** To load the trained model and run test, run `python load.py <parameter_file> <time-stamp>` (use the same ID as used during training)
 
 For *e.g.* to train and test the pytorch code on *1inf* question type on WebQuestionsSP:
-1. `cd CSQA_TACL_FINAL/code/NPI/pytorch/gold_FB_webQuestionsSP`
-2. `python train.py parameters/gold/parameters_1inf.json Jan_7` *#this will create a folder model/1inf_Jan_7 to dump the trained model*
-3. `python load.py parameters/gold/parameters_1inf.json Jan_7` *#this will run the trained model on the test data with gold ERT linking, as mentioned in the parameter file* 
-4. `python load.py parameters/noisy/parameters_1inf.json Jan_7` *#this will run the trained model on the test data with noisy ERT linking, as mentioned in the parameter file* 
+	1. `cd CSQA_TACL_FINAL/code/NPI/pytorch/gold_FB_webQuestionsSP`
+	2. `python train.py parameters/gold/parameters_1inf.json Jan_7` *#this will create a folder model/1inf_Jan_7 to dump the trained model*
+	3. `python load.py parameters/gold/parameters_1inf.json Jan_7` *#this will run the trained model on the test data with gold ERT linking, as mentioned in the parameter file* 
+	4. `python load.py parameters/noisy/parameters_1inf.json Jan_7` *#this will run the trained model on the test data with noisy ERT linking, as mentioned in the parameter file* 
 
 * **Step 9:** To download pre-trained models and log files:
-1. Download model.zip from https://drive.google.com/file/d/1rRZcDhWaRnv3BtZuwC0rFl8yrgElgM47/view?usp=sharing and extract
-2. model/gold_FB_webQuestionsSP contains model.zip and out.zip
-3. model.zip contains all the models trained on the 4 query types
-4. out.zip contains all the log files of the training on the 4 query types
+	1. Download model.zip from https://drive.google.com/file/d/1rRZcDhWaRnv3BtZuwC0rFl8yrgElgM47/view?usp=sharing and extract
+	2. model/gold_FB_webQuestionsSP contains model.zip and out.zip
+	3. model.zip contains all the models trained on the 4 query types
+	4. out.zip contains all the log files of the training on the 4 query types
