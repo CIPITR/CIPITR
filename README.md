@@ -114,4 +114,4 @@ We have also provided a simple RL environment for doing **Question answering ove
 * **Step 2:** To incorporate the environment one has to simply import the **environment.py** file.
 * **Step 3:** To instantiate an environment you will need to input a parameter file. Sample parameter files are located in the **parameters** folder. 
 * **Step 4** A detailed and sufficient instruction on using and instantiating an environment object is provided in the **sample_env_usage.ipynb** notebook.
-* 
+ 
