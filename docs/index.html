@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Complex Imperative Program Induction with Terminal Rewards</title>
+</head>
+<body style="margin: 20%; text-align: justify; font-family: 'Trebuchet MS', Georgia, Helvetica, Sans-serif">
+<div style="text-align: center">
+<h1>Complex Imperative Program Induction with Terminal Rewards</h1>
+</div>
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<div id="root"></div>
+<div id="tpopup" style="text-align: center">
+    <iframe style="background: #FFFFFF;" src="https://docs.google.com/presentation/d/1xXO59GfzurOUOBCWcblvJAkynEK47YHfut4wuowua1k/embed?start=true&loop=true&delayms=3000" frameborder="0" width="640" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</div>
+
+<!--<iframe src='https://view.officeapps.live.com/op/embed.aspx?src=[ppt_demo.pptx]' width='100%' height='600px' frameborder='0'>-->
+<br/>
+<h2>Complex Forms of KB based Question Answering in real world problems</h2>
+<p> Question answering (QA) is a core problem in AI; almost every interactive task involving natural language can be modeled as a QA problem. For <i>e.g.</i> a QA model should be able to answer the following questions </p>
+<ul>
+<li> ‘Can Tazocin or Zosyn be used intravenously to treat renal problems in pregnant women?’ <i>(in the healthcare domain)</i></li>
+<li> ‘How many investors purchased restricted stock within a quarter of opening their account?' <i>(in finance domain)</i></li>
+<li> ‘Which of the last five movies by the Russo Brothers gained most positive sentiment from the public?’ <i>(in open domain)</i></li>
+<li> ‘Which countries have more rivers and lakes than Brazil?‘ <i>(Geographical domain)</i></li>
+</ul> 
+<br/>
+
+<h2>Traditional and Contemporary Ways of Solving QA</h2>
+<p>In the recent years the proliferation of deep learning has revolutionized the modeling of QA tasks, taking away the dependency on poorly scalable human-intensive rule based models and ushering a new era of learning neural representations of the query and its transformation to reach the answer.</p>
+<br/>
+<p>However such models still are prone to making blatant mistakes, especially as queries become more and more complex and even when it answers correctly, the reasoning followed by it is not interpretable by end users.</p>
+<br/>
+
+<h2>Neural Program Induction for Complex Tasks</h2>
+<p>Rather, a more intuitive way of approaching a complex task like QA would be to learn to deconstruct it into a sequence of simpler steps, as humans usually do. Motivated by this, researchers in the deep learning era, developed a new learning paradigm, called Neural Program Induction, through which the AI model can be taught to procedurally decompose a complex task into a program i.e. a sequence of atomic actions, which on execution will lead to the answer.</p>
+<br/>
+<p>However research on this paradigm has been restricted to simpler tasks like sorting or addition of numbers or simple multi-hop QA over small database tables or knowledge bases, and more importantly under impractical assumptions that the true program is provided as supervision during training by an Oracle.</p>
+
+<h2>Our Contribution: Weak Supervised Neural Program Induction for Complex KBQA</h2>
+<p>Considering these practical limitations, we made a very first attempt at training a model, <i>Complex Imperative Program Induction from Terminal Rewards (CIPITR)</i> to answer complex questions, without either of the constraints used in the past.</p>
+<ul>
+<li>Firstly the questions can be complex; requiring sometimes 7-12 steps of reasonings of different flavors, while some steps might require logical reasoning, other steps might need comparative or quantitative analysis.</li>
+<li>Secondly the questions need to be answered based on a large scale knowledge base of over 50 million facts.</li>
+<li>And thirdly and most importantly, the model is trained with only the question-answer pairs as supervision and can learn to induce program without the need for the oracle program during training. 
+</li>
+</ul>
+<br/>
+<h2>Challenges Faced by CIPITR</h2>
+<p>For a complex question like ‘How many investors purchased restricted stock within a quarter of opening their account?’ the model has to first understand that the query is talking about concepts like ‘investors, ‘restricted stock’, ‘quarter’ and relations between concepts like 'purchased’ and ‘opening’ and then map them to facts in the Financial Knowledge Base. Even when this is done perfectly, the space of possible programs induced is exponential (~10^19), out of which only a few can yield a positive reward. For <i>e.g.</i></p>
+<ul>
+<li>CIPITR has to first find out which investors opened account, and then which of them purchased restricted stock.</li>
+<li>Next it has to find the time of purchasing and opening account and then apply the time constraint of a quarter and finally count the number of such investors.</li>
+<li>Only if this decomposition was correctly done, the model would reach the correct answer and get some positive reward.</li>
+</ul>
+<figure>
+  <div style="text-align: center">	
+  <img src="fig1.png" width="650" alt="The Pulpit Rock">
+  </div>
+</figure>
+
+<br/>
+<h2>Overcoming the challenges in CIPITR through Neural Symbolic Reasoning</h2>
+<p>This extreme reward sparsity compounded by the sheer size of the program space increases the variance of the model resulting in local minima issues and learning instability. In order to pragmatically search in this combinatorial space of possible programs, the neural model has to incorporate generic programming rules, just as human programmers do, as symbolic constraints in its search. Along with that it should also be able to incorporate task or schema level constraints, to ensure that the programs generated are indeed consistent with the background Knowledge Base (KB) and can generate a meaningful answer.</p>
+<div class="row">
+  <div class="column">
+  <div style="text-align: center" width="500">	
+  <img src="fig2.png" width="500" alt="The Pulpit Rock">
+  <figcaption>Incorporating symbolic constraints for sampling meaningful operators</figcaption>
+  </div>
+  <br/>
+  <div style="text-align: center" width="500">	
+  <img src="fig3.png" width="500" alt="The Pulpit Rock">
+  <figcaption>Incorporating symbolic constraints for sampling meaningful instantiations of arguments. Example shown for a question <i>“Which rivers originate in China and flow through both India and Bangladesh?”</i></figcaption>
+  </div>
+</figure>
+<br/>
+<br/>
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<div id="root"></div>
+<div id="tpopup" style="text-align: center">
+    <iframe style="background: #FFFFFF;" src="https://docs.google.com/presentation/d/1MTlf1ZJAL5wOLngQFOOG86wkWpzoTMPSxLMauWLVtyE/embed?start=true&loop=true&delayms=3000" frameborder="0" width="640" height="389" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+</div>
+
+<h2>Performance of CIPITR in comparison to contemporary Program Induction Models</h2>
+
+Overcoming these challenges, CIPITR scored at least 3x higher than the competing systems for moderately complex queries requiring 2–5 step programs. 
+
+And on one of the hardest class of queries (comparative reasoning) with 5–10 steps, CIPITR outperformed state-of-the-art neural program induction models by a factor of 89 times.
+
+<h2>Applicability of CIPITR</h2>
+This makes CIPITR one of the very first successes at widening the applicability of complex program induction paradigm to various real-world settings, by eliminating the need for oracle program supervision during training. And it also shows significant potential in pushing the frontiers of complex reasoning tasks in various settings, like answering questions or conversing strategically over multiple modalities (like text/images/videos) in a more human-like fashion.
+
+This research on Complex Program Induction for Querying Knowledge Bases in the Absence of Gold Programs has been published in MIT Press Journals, and will be presented at this week’s ACL Conference in Florence, Italy. 
+<br/>
+<a href=https://github.com/CIPITR/CIPITR>Code</a>
+<a href=http://lifelongqa.sl.cloud9.ibm.com:3000/>Demo</a>
+
+</body>
+</html>
+
