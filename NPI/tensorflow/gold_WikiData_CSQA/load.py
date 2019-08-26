@@ -140,10 +140,8 @@ class TrainModel():
             self.model.create_placeholder()
             [self.action_sequence, self.program_probs, self.logProgramProb, self.Reward_placeholder, self.Relaxed_rewards_placeholder, \
              self.train_op, self.loss, self.beam_props, self.per_step_probs, self.IfPosIntermediateReward, \
-             self.mask_IntermediateReward, self.IntermediateReward, \
-             self.OldBaseline, self.final_baseline] = self.model.reinforce()
+             self.mask_IntermediateReward, self.IntermediateReward] = self.model.reinforce()
             #self.program_keys, self.program_embedding, self.word_embeddings, self.argtype_embedding, self.query_attention_h_mat = self.model.get_parameters()
-            self.old_b = np.zeros([self.param['batch_size'],1])
             if param['Debug'] == 0:
                 config = tf.ConfigProto()
                 config.gpu_options.allow_growth = True
@@ -503,13 +501,11 @@ class TrainModel():
         # =============================================================================
         if self.param['Debug'] == 0:
             partial_run_op = self.sess.partial_run_setup([self.action_sequence, self.program_probs, self.logProgramProb, \
-                                                          self.train_op, self.loss, self.beam_props, self.per_step_probs, \
-                                                          self.final_baseline], \
+                                                          self.train_op, self.loss, self.beam_props, self.per_step_probs], \
                                                         feed_dict1.keys()+[self.Reward_placeholder, self.Relaxed_rewards_placeholder, \
                                                                        self.IfPosIntermediateReward, \
                                                                        self.mask_IntermediateReward, \
-                                                                       self.IntermediateReward,\
-                                                                       self.OldBaseline])
+                                                                       self.IntermediateReward])
 
             a_seq, program_probabilities, logprogram_probabilities, \
             beam_props, per_step_probs = self.sess.partial_run(partial_run_op, \
@@ -536,14 +532,12 @@ class TrainModel():
             else:
                 rescaling_term_grad = reward
 
-            a,loss,new_b = self.sess.partial_run(partial_run_op, [self.train_op, self.loss, self.final_baseline], \
+            a,loss = self.sess.partial_run(partial_run_op, [self.train_op, self.loss], \
                                            feed_dict = {self.Reward_placeholder:rescaling_term_grad, \
                                                         self.Relaxed_rewards_placeholder:relaxed_rewards, \
                                                         self.IfPosIntermediateReward:intermediate_rewards_flag,\
                                                         self.mask_IntermediateReward:mask_intermediate_rewards, \
-                                                        self.IntermediateReward:intermediate_rewards,\
-                                                        self.OldBaseline:self.old_b,})
-            self.old_b = new_b
+                                                        self.IntermediateReward:intermediate_rewards})
         # -----------------------------------------------------------------------------
         # =============================================================================
         # For Debugging Use This
