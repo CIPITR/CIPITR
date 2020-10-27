@@ -14,7 +14,7 @@ cffi==1.11.5
 chardet==3.0.4
 conda==4.5.11
 configparser==3.5.0
-cryptography==2.2.2
+cryptography==3.2
 Cython==0.28.5
 decorator==4.3.0
 dill==0.2.8.2
