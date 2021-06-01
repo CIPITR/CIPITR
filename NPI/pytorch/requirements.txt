@@ -76,7 +76,7 @@ torchvision==0.2.1
 tqdm==4.28.1
 traceback2==1.4.0
 unittest2==1.1.0
-urllib3==1.22
+urllib3==1.26.5
 virtualenv==15.1.0
 Werkzeug==0.14.1
 wrapt==1.10.11
