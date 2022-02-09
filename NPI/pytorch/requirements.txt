@@ -65,7 +65,7 @@ statistics==1.0.3.5
 sympy==1.2
 tensorboard==1.10.0
 tensorflow==1.10.0
-tensorflow-gpu==1.10.0
+tensorflow-gpu==2.5.3
 tensorflow-tensorboard==0.4.0
 termcolor==1.1.0
 Theano==1.0.3
