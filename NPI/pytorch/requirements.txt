@@ -46,7 +46,7 @@ Pillow==5.2.0
 pipeproxy==0.7
 plac==0.9.6
 preshed==2.0.1
-protobuf==3.6.0
+protobuf==3.18.3
 pycosat==0.6.3
 pycparser==2.18
 pyOpenSSL==18.0.0
