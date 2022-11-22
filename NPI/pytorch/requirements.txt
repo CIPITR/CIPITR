@@ -42,7 +42,7 @@ numpy==1.15.0
 olefile==0.45.1
 pathlib==1.0.1
 pbr==4.2.0
-Pillow==5.2.0
+Pillow==9.3.0
 pipeproxy==0.7
 plac==0.9.6
 preshed==2.0.1
